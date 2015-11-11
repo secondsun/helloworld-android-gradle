@@ -53,7 +53,8 @@ public class MainActivityTest extends ActivityUnitTestCase<MainActivity> {
 
 
     public void testActivityCallsFHInitOnStartup() throws IOException {
-        getInstrumentation().runOnMainSync(new Runnable() {
+        throw new RuntimeException("Tests run");
+        /*getInstrumentation().runOnMainSync(new Runnable() {
             @Override
             public void run() {
                 MainActivity activity = startActivity(new Intent(), Bundle.EMPTY, null);
@@ -73,7 +74,7 @@ public class MainActivityTest extends ActivityUnitTestCase<MainActivity> {
         Assert.assertEquals(HelloFragment.class, f.getClass());
 
         main.finish();
-
+*/
     }
 
 }
