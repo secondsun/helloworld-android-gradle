@@ -4,9 +4,6 @@
 #If you do not have a contract, you do not have a license to use this software.
 #
 language: android
-sudo: required
-services:
-  - docker
 jdk:
   - oraclejdk8
 
@@ -23,7 +20,6 @@ android:
     - extra-android-support
     - sys-img-armeabi-v7a-android-16
 before_script:
-  - sudo lsmod | grep kvm
   - echo no | android create avd --force -n test -t android-16 --abi armeabi-v7a
   - emulator -avd test -no-skin -no-audio -no-window &
   - android-wait-for-emulator
